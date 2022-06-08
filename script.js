@@ -14,6 +14,11 @@ console.log(lowerCase);
 // uppercase letters
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 console.log(upperCase);
+// special characters
+var specChars = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~".split("");
+console.log(specChars);
+
+
   // splits the individual characters into standalone variables in the array
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
