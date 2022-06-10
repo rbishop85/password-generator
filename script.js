@@ -44,31 +44,17 @@ var characters = charOptions();
 console.log(characters);
 
 // Splitting resulting array back into individual values
-var lower = characters[0];
-var upper = characters[1];
-var numb = characters[2];
-var spec = characters[3];
+// var lower = characters[0];
+// var upper = characters[1];
+// var numb = characters[2];
+// var spec = characters[3];
 
 // Console log of resulting individual character choices
-console.log("Lower case characters: " + lower);
-console.log("Upper case letters: " + upper);
-console.log("Numbers: " + numb);
-console.log("Special Characters: " + spec);
+console.log("Lower case characters: " + characters[0]);
+console.log("Upper case letters: " + characters[1]);
+console.log("Numbers: " + characters[2]);
+console.log("Special Characters: " + characters[3]);
 
-
-
-// var lower = confirm("Does your password require lower case letters?");
-// var upper = confirm("Does your password require upper case letters?");
-// var numb = confirm("Does your password require numbers?");
-// var spec = confirm("Does your password require special characters?");
-
-
-// Console logs to verify entries
-
-// console.log("Lower case letters required: " + lower + ".");
-// console.log("Upper case letters required: " + upper + ".");
-// console.log("Numbers required: " + lower + ".");
-// console.log("Special characters required: " + lower + ".");
 
 
 
