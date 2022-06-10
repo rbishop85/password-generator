@@ -20,6 +20,8 @@ function passLength(){
 var length = passLength();
 
 // Function to ask user what types of characters they want, forcing them to try again if they select none, then spit out all results as an array
+var characters = charOptions();
+
 function charOptions(){
   var lower = confirm("Does your password require lower case letters?");
   var upper = confirm("Does your password require upper case letters?");
@@ -33,17 +35,15 @@ function charOptions(){
   }
 }
 
-var characters = charOptions();
-
-// Console log of all password parameters requested by user
-console.log("User requested password features:")
-console.log("");
-console.log("Password length: " + length + " characters.");
-console.log("Lower case characters: " + characters[0]);
-console.log("Upper case letters: " + characters[1]);
-console.log("Numbers: " + characters[2]);
-console.log("Special Characters: " + characters[3]);
-console.log("");
+// ** Console log of all password parameters requested by user
+// console.log("User requested password features:")
+// console.log("");
+// console.log("Password length: " + length + " characters.");
+// console.log("Lower case characters: " + characters[0]);
+// console.log("Upper case letters: " + characters[1]);
+// console.log("Numbers: " + characters[2]);
+// console.log("Special Characters: " + characters[3]);
+// console.log("");
 
 // Creating character array based on all character options selected
 var charArray = [];
@@ -61,11 +61,12 @@ if (characters[3]){
   charArray = charArray.concat(specChars);
 }
 
-// Log of full array created based on user requests
-console.log("Full list of character options for this password: " + charArray);
-console.log("");
+// ** Log of full array created based on user requests
+// console.log("Full list of character options for this password: " + charArray);
+// console.log("");
 
 // Generate password based on randomly pulling number of characters requested by user from chracter array and compiling them together.
+var newPassword = createPass();
 
 function createPass(){
   var newPassword = "";
@@ -103,18 +104,19 @@ function createPass(){
     return false;
   });
 
-  //Results of output comparison
-  console.log("Password includes lower case: " + containL);
-  console.log("Password includes upper case: " + containU);
-  console.log("Password includes numbers: " + containN);
-  console.log("Password includes special characters: " + containS);
+  // ** Log of output comparison
+  // console.log("Password includes lower case: " + containL);
+  // console.log("Password includes upper case: " + containU);
+  // console.log("Password includes numbers: " + containN);
+  // console.log("Password includes special characters: " + containS);
 
   // Checking output comparison vs choices requested by user
   var passwordCheck = (containL === characters[0] && containU === characters[1] && containN === characters[2] && containS === characters[3]);
 
-  // Logging if output comparison matched all user choices
-  console.log("Password met all criteria: " + passwordCheck);
+  // ** Logging if output comparison matched all user choices
+  // console.log("Password met all criteria: " + passwordCheck);
   
+  // If generated password didn't meet all criteria requested, then rerun password generation, If it did then output the password
   if(!passwordCheck){
     console.log("Password did not meet all criteria, re-generating...");
     console.log("");
@@ -124,8 +126,8 @@ function createPass(){
   }
 }
 
-var newPassword = createPass();
 
+// Final output of the password, ending the function and allowing the pre-written code to finish up by sending the password to the webpage display
 return newPassword;
 }
 
