@@ -31,7 +31,7 @@ function charOptions(){
   var numb = confirm("Does your password require numbers?");
   var spec = confirm("Does your password require special characters?");
   if (!lower && !upper && !numb && !spec){
-    alert("You must select at least 1 type of character for your password.  Please try again.")
+    alert("Please select at least one type of character for your password.")
     return charOptions();
   }  else {
     return [lower, upper, numb, spec];
@@ -43,24 +43,51 @@ var characters = charOptions();
 //Console log of resulting array
 console.log(characters);
 
-// Splitting resulting array back into individual values
-// var lower = characters[0];
-// var upper = characters[1];
-// var numb = characters[2];
-// var spec = characters[3];
-
 // Console log of resulting individual character choices
 console.log("Lower case characters: " + characters[0]);
 console.log("Upper case letters: " + characters[1]);
 console.log("Numbers: " + characters[2]);
 console.log("Special Characters: " + characters[3]);
 
+// Create a full list of potential characters based on criteria provided by user
+var charList = [];
+
+if (characters[0]){
+  charList = charList.concat(lowerCase);
+}
+
+if (characters[1]){
+  charList = charList.concat(upperCase);
+}
+
+if (characters[2]){
+  charList = charList.concat(numbers);
+}
+
+if (characters[3]){
+  charList = charList.concat(specChars);
+}
+
+console.log("Full list of character options for this password: " + charList);
+
+// Generate password based on randomly pulling number of characters requested by user and compiling them together.
+var newPassword = "";
+
+// for( var i = 0; i < length; i++ ) {
+//   newPassword = newPassword.concat(Math.floor(Math.random() * charList.length));
+// }
+
+for( var i = 0; i < length; i++ ) {
+  var choice = Math.floor(Math.random() * charList.length);
+  newPassword = newPassword.concat(charList[choice]);
+}
+
+console.log("New Password: " + newPassword);
+
+// var computer = Math.floor(Math.random() * choices.length);
 
 
-
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
-
-
+return newPassword;
 }
 
 
