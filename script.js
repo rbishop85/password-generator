@@ -13,16 +13,15 @@ function passLength(){
   var length = prompt("Please enter required password length. (From 8 to 128)");
   if (length < 8 || length > 128 || isNaN(length)){
     alert("Please select a length between 8 and 128");
-    passLength();
+    return passLength();
   }   else {
-      console.log("Final length before exiting function: " + length);
       return length;
      }
 }
 
 length = passLength();
 
-console.log("Password length after function is " + length + " characters.");
+console.log("Password length is " + length + " characters.");
 
 // var lower = confirm("Does your password require lower case letters?");
 // var upper = confirm("Does your password require upper case letters?");
