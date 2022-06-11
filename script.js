@@ -132,6 +132,11 @@ return newPassword;
 }
 
 
+
+
+
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
