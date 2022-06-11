@@ -45,6 +45,7 @@ After selecting all criteria the password will be randomly generated, checked to
   - If Statements
   - For Loops
   - Math Methods
+  - Strict Equality (===)
 
 ---
 

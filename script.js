@@ -118,8 +118,8 @@ function createPass(){
   
   // If generated password didn't meet all criteria requested, then rerun password generation, If it did then output the password
   if(!passwordCheck){
-    console.log("Password did not meet all criteria, re-generating...");
-    console.log("");
+    // console.log("Password did not meet all criteria, re-generating...");
+    // console.log("");
     return createPass();
   } else {
     return newPassword;
