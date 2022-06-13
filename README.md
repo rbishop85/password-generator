@@ -22,7 +22,7 @@ Given a pre-made html page setup with a password box and a "Generate Password" b
 
 ## Demo of Project:
 
-![Animated gif of password generator.](./images/passgendemo.gif)
+![Animated gif of password generator.](./assets/images/passgendemo.gif)
 
 ---
 

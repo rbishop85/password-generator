@@ -7,9 +7,13 @@ var numbers = "0123456789".split("");
 var specChars = "!#$%&()*+,-./:;<=>?@[\]^_`{|}~".split("");
 
 // Function that asks user for password length, then notifies if the length isn't correct or isn't a real number.  Then outputs that chosen number
+var length = passLength();
+
 function passLength(){
   var length = prompt("Please enter required password length. (From 8 to 128)");
-  if (length < 8 || length > 128 || isNaN(length)){
+  if (length === null){
+    return;
+  }  else if (length < 8 || length > 128 || isNaN(length)){
     alert("Please select a length between 8 and 128");
     return passLength();
   }  else {
@@ -17,7 +21,12 @@ function passLength(){
      }
 }
 
-var length = passLength();
+// Stops password generation if user hit cancel on length selection
+if(length === undefined){
+  return "Your Secure Password";
+}
+
+
 
 // Function to ask user what types of characters they want, forcing them to try again if they select none, then spit out all results as an array
 var characters = charOptions();
